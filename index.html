@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Dental Clinic Amman | Best Cosmetic Dentistry Jordan</title>
+    <meta name="description" content="Hollywood Smiles & Implants in Jabal Hussein by Dr. Abeer Saleh Abdullah—10+ Years Experience">
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=">
+    <style>
+        :root { --primary: #008080; --secondary: #f0f8ff; --accent: #20b2aa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: repeating-linear-gradient(45deg, #f5f5f5 0px, #f5f5f5 20px, #e0e0e0 20px, #e0e0e0 40px); transition: direction 0.3s; }
+        body.lang-ar { direction: rtl; }
+        body [data-lang="en"] { display: block; }
+        body [data-lang="ar"] { display: none; }
+        body.lang-ar [data-lang="en"] { display: none; }
+        body.lang-ar [data-lang="ar"] { display: block; }
+        header { position: fixed; top: 0; width: 100%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo::before { content: 'ED'; font-size: 1.5rem; font-weight: bold; color: var(--primary); font-family: 'Georgia', serif; display: inline-block; transform: rotate(-5deg); }
+        nav ul { display: flex; list-style: none; gap: 1rem; }
+        nav a { text-decoration: none; color: #333; }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; }
+        .hamburger::before, .hamburger::after, .hamburger span { content: ''; height: 3px; width: 25px; background: var(--primary); margin: 3px 0; transition: 0.3s; }
+        @media (max-width: 768px) { .hamburger { display: flex; } nav ul { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; flex-direction: column; box-shadow: 0 2px 5px rgba(0,0,0,0.1); } nav ul.active { display: flex; } }
+        .lang-toggle { background: var(--primary); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 5px; }
+        .hero { height: 100vh; background: linear-gradient(to bottom, var(--primary), var(--secondary)); background-attachment: fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 2rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero button { background: white; color: var(--primary); padding: 1rem 2rem; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        #about .headshot { width: 200px; height: 200px; background: #ddd; border-radius: 50%; margin: 0 auto 2rem; position: relative; }
+        #about .headshot::before { content: '👩‍⚕️'; font-size: 100px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        #about figcaption { text-align: center; margin-bottom: 1rem; font-weight: bold; }
+        #about ul { list-style: none; }
+        #about ul li::before { content: '✓'; color: var(--primary); margin-right: 0.5rem; }
+        #services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 10px; text-align: center; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,128,128,0.2); }
+        .service-card::before { display: block; margin: 0 auto 1rem; }
+        .hollywood::before { content: ''; border-top: 3px solid var(--primary); width: 40px; height: 20px; border-radius: 50% 50% 0 0; }
+        .whitening::before { content: ''; width: 40px; height: 40px; border: 2px dashed var(--primary); border-radius: 50%; animation: spin 2s linear infinite; display: block; margin: 0 auto 1rem; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .implants::before { content: '↓↑'; color: var(--primary); font-size: 1.5rem; display: block; text-align: center; margin-bottom: 1rem; }
+        .crowns::before { content: ''; width: 30px; height: 30px; border: 3px solid var(--primary); border-radius: 50% 0 50% 0; display: block; margin: 0 auto 1rem; }
+        .fillings::before { content: '🎯'; color: var(--primary); font-size: 1.5rem; display: block; text-align: center; margin-bottom: 1rem; transform: rotate(45deg); }
+        .root::before { content: ''; width: 40px; height: 20px; background: var(--primary); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); display: block; margin: 0 auto 1rem; }
+        .gum::before { content: '∼∼'; color: var(--primary); font-size: 1.5rem; display: block; text-align: center; margin-bottom: 1rem; letter-spacing: 10px; }
+        .pediatric::before { content: '★'; color: var(--primary); font-size: 1.5rem; display: block; text-align: center; margin-bottom: 1rem; animation: twinkle 1s infinite; }
+        @keyframes twinkle { 50% { opacity: 0.5; } }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; }
+        .modal.active { display: flex; align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 2rem; border-radius: 10px; max-width: 500px; position: relative; }
+        .close { position: absolute; top: 1rem; right: 1rem; cursor: pointer; font-size: 2rem; }
+        #spotlights ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+        .spotlight { background: white; padding: 1rem; border-radius: 5px; cursor: pointer; }
+        .spotlight-details { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+        .spotlight.open .spotlight-details { max-height: 200px; }
+        #testimonials ol { list-style: none; position: relative; overflow: hidden; }
+        .testimonial-card { background: white; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; animation: slideIn 0.5s; opacity: 0; }
+        @keyframes slideIn { to { opacity: 1; transform: translateX(0); } }
+        .badge { background: var(--accent); color: white; padding: 0.2rem 0.5rem; border-radius: 3px; }
+        .stars { color: gold; animation: burst 2s infinite; }
+        @keyframes burst { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+        #faq dl { display: grid; }
+        #faq dt { background: var(--primary); color: white; padding: 1rem; cursor: pointer; }
+        #faq dd { max-height: 0; overflow: hidden; transition: max-height 0.3s; background: #f9f9f9; padding: 0 1rem; }
+        #faq dd.open { max-height: 200px; padding: 1rem; }
+        #blog { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .blog-card .thumb { height: 150px; background: var(--primary); border-radius: 5px; position: relative; margin-bottom: 1rem; }
+        .blog-card .thumb::before { content: '🌙'; font-size: 50px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+        #booking form { display: grid; gap: 1rem; max-width: 500px; margin: 0 auto; }
+        #booking input, #booking select, #booking textarea { padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px; }
+        #booking button { background: var(--primary); color: white; border: none; padding: 1rem; cursor: pointer; }
+        #contact iframe { width: 100%; height: 300px; border: none; margin-top: 1rem; }
+        footer { background: #333; color: white; text-align: center; padding: 2rem; }
+        footer ul { list-style: none; display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+        footer a { color: white; text-decoration: none; }
+        footer a::before { content: '📸'; margin-left: 0.5rem; }
+    </style>
+</head>
+<body class="lang-en">
+    <header>
+        <div class="logo"></div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home" onclick="smoothScroll(event)">Home</a></li>
+                <li><a href="#about" onclick="smoothScroll(event)">About</a></li>
+                <li><a href="#services" onclick="smoothScroll(event)">Services</a></li>
+                <li><a href="#spotlights" onclick="smoothScroll(event)">Spotlights</a></li>
+                <li><a href="#testimonials" onclick="smoothScroll(event)">Testimonials</a></li>
+                <li><a href="#faq" onclick="smoothScroll(event)">FAQ</a></li>
+                <li><a href="#blog" onclick="smoothScroll(event)">Blog</a></li>
+                <li><a href="#booking" onclick="smoothScroll(event)">Booking</a></li>
+                <li><a href="#contact" onclick="smoothScroll(event)">Contact</a></li>
+            </ul>
+            <button class="hamburger"><span></span></button>
+        </nav>
+        <button class="lang-toggle" onclick="toggleLang()">عربي</button>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 data-lang="en">Your Confident Smile Starts Here</h1>
+        <h1 data-lang="ar">ابتسامتك تبدأ من هنا</h1>
+        <p data-lang="en">Modern care in Jabal Al-Hussein with 10+ years experience</p>
+        <p data-lang="ar">رعاية حديثة في جبل الحسين مع أكثر من 10 سنوات من الخبرة</p>
+        <button onclick="smoothScroll(event)" data-href="#booking">Free Consult</button>
+    </section>
+
+    <section id="about">
+        <figure class="headshot">
+            <figcaption data-lang="en">Dr. Abeer Saleh Abdullah</figcaption>
+            <figcaption data-lang="ar">د. عبير صالح عبد الله</figcaption>
+        </figure>
+        <p data-lang="en">Dr. Abeer Saleh Abdullah, with over 10 years of experience in cosmetic and family dentistry, holds a Bachelor of Dental Surgery from Jordan University of Science and Technology (JUST) and a Postgraduate in Prosthodontics from the University of Michigan, USA. Specializing in Hollywood Smile transformations, veneers, dental implants, teeth whitening, crowns & bridges, cosmetic fillings, root canal treatments, gum therapy, and pediatric dentistry, she uses advanced tools like German Dentamax/WP precision instruments, laser technology for pain-free procedures, and digital 3D imaging for personalized plans. Passionate about empowering Amman families with confident smiles, Dr. Abeer integrates Jordanian lifestyle tips (e.g., Eid prep whitening, summer hydration for dry climates) in her IG videos (@elevate_dental_clinic). Certified in laser dentistry and a Jordan Dental Association member, she offers transparent pricing and bilingual care for diverse patients.</p>
+        <p data-lang="ar">د. عبير صالح عبد الله، مع أكثر من 10 سنوات من الخبرة في طب الأسنان التجميلي والعائلي، تحمل بكالوريوس في جراحة الأسنان من جامعة العلوم والتكنولوجيا الأردنية (JUST) ودبلوم في الترميمات من جامعة ميشيغان، الولايات المتحدة. متخصصة في تحولات ابتسامة هوليوود، الفينير، زراعة الأسنان، تبييض الأسنان، التيجان والجسور، الحشوات التجميلية، علاج العصب، علاج اللثة، وطب أسنان الأطفال، تستخدم أدوات متقدمة مثل أدوات الدقة الألمانية Dentamax/WP، تقنية الليزر للإجراءات بدون ألم، والتصوير الرقمي ثلاثي الأبعاد لخطط شخصية. شغوفة بتمكين عائلات عمان من ابتسامات واثقة، تدمج د. عبير نصائح نمط الحياة الأردني (مثل تبييض عيد، ترطيب الصيف للمناخ الجاف) في فيديوهات IG (@elevate_dental_clinic). معتمدة في طب الأسنان بالليزر وعضو في الجمعية الأردنية لطب الأسنان، تقدم تسعيرًا شفافًا ورعاية ثنائية اللغة للمرضى المتنوعين.</p>
+        <ul class="cert-list" data-lang="en">
+            <li>Hollywood Smile</li>
+            <li>Veneers</li>
+            <li>Implants</li>
+            <li>Fillings</li>
+            <li>Root Canal</li>
+            <li>Gums</li>
+            <li>Pediatric</li>
+        </ul>
+        <ul class="cert-list" data-lang="ar">
+            <li>ابتسامة هوليوود</li>
+            <li>الفينير</li>
+            <li>زراعة الأسنان</li>
+            <li>الحشوات</li>
+            <li>علاج العصب</li>
+            <li>علاج اللثة</li>
+            <li>طب أسنان الأطفال</li>
+        </ul>
+    </section>
+
+    <section id="services">
+        <h2 data-lang="en">Services</h2>
+        <h2 data-lang="ar">الخدمات</h2>
+        <div class="service-card hollywood" onclick="openModal('hollywood')">
+            <h3 data-lang="en">Hollywood Smile & Veneers</h3>
+            <h3 data-lang="ar">ابتسامة هوليوود والفينير وقشور الخزف</h3>
+        </div>
+        <div class="service-card whitening" onclick="openModal('whitening')">
+            <h3 data-lang="en">Teeth Whitening</h3>
+            <h3 data-lang="ar">تبييض الأسنان</h3>
+        </div>
+        <div class="service-card implants" onclick="openModal('implants')">
+            <h3 data-lang="en">Dental Implants</h3>
+            <h3 data-lang="ar">زراعة الأسنان</h3>
+        </div>
+        <div class="service-card crowns" onclick="openModal('crowns')">
+            <h3 data-lang="en">Crowns & Bridges</h3>
+            <h3 data-lang="ar">تيجان وجسور الأسنان</h3>
+        </div>
+        <div class="service-card fillings" onclick="openModal('fillings')">
+            <h3 data-lang="en">Cosmetic Fillings</h3>
+            <h3 data-lang="ar">حشوات الأسنان التجميلية</h3>
+        </div>
+        <div class="service-card root" onclick="openModal('root')">
+            <h3 data-lang="en">Root Canal Treatment</h3>
+            <h3 data-lang="ar">علاج العصب</h3>
+        </div>
+        <div class="service-card gum" onclick="openModal('gum')">
+            <h3 data-lang="en">Gum Treatment</h3>
+            <h3 data-lang="ar">علاج اللثة وظيفيًا وجماليًا</h3>
+        </div>
+        <div class="service-card pediatric" onclick="openModal('pediatric')">
+            <h3 data-lang="en">Pediatric Dentistry</h3>
+            <h3 data-lang="ar">طب أسنان الأطفال</h3>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <section id="spotlights">
+        <h2 data-lang="en">Service Spotlights</h2>
+        <h2 data-lang="ar">أضواء الخدمات</h2>
+        <ul>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Whitening for Busy Pros</h3>
+                <h3 data-lang="ar">تبييض للمحترفين المشغولين</h3>
+                <p data-lang="en">1hr lunch session, 25 JD—beat Amman coffee stains without downtime.</p>
+                <p data-lang="ar">جلسة 1 ساعة في الغداء، 25 دينار—هزم بقع القهوة في عمان بدون توقف.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>Imagine rushing through Amman's traffic for a quick lunch break, only to emerge with a brighter smile. Our laser whitening fits perfectly into your day, removing years of tea and coffee buildup common in Jordanian culture. Post-treatment, enjoy your afternoon meetings with newfound confidence. Includes a custom gel kit for maintenance during festive seasons like Eid.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>تخيل الاندفاع عبر حركة المرور في عمان لاستراحة غداء سريعة، لتخرج بابتسامة أكثر إشراقًا. تبييض الليزر يناسب يومك تمامًا، يزيل سنوات من تراكم الشاي والقهوة الشائع في الثقافة الأردنية. بعد العلاج، استمتع باجتماعاتك بعد الظهر بثقة جديدة. يشمل مجموعة جل مخصصة للصيانة خلال مواسم الأعياد مثل العيد.</p>
+                </div>
+            </li>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Veneers for Wedding Prep</h3>
+                <h3 data-lang="ar">فينير لتحضير الزفاف</h3>
+                <p data-lang="en">Transform your smile in 2 weeks for that perfect Amman ceremony.</p>
+                <p data-lang="ar">حول ابتسامتك في أسبوعين لتلك الحفلة المثالية في عمان.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>As wedding season heats up in Jordan, many brides and grooms seek that Hollywood glow. Our custom veneers are crafted with digital precision, ensuring a natural look that withstands the joys of zaffa dances and family feasts. Start with a free consult to match your vision—see real transformations on our IG.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>مع تسخين موسم الأعراس في الأردن، يبحث العديد من العرائس والعرسان عن ذلك التوهج الهوليوودي. فينيرنا المخصص مصمم بدقة رقمية، مضمون مظهر طبيعي يتحمل فرح الزفة والولائم العائلية. ابدأ باستشارة مجانية لمطابقة رؤيتك—شاهد التحولات الحقيقية على IG.</p>
+                </div>
+            </li>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Implants for Mansaf Eaters</h3>
+                <h3 data-lang="ar">زراعات لآكلي المنسف</h3>
+                <p data-lang="en">Stable teeth to savor Jordan's national dish worry-free.</p>
+                <p data-lang="ar">أسنان مستقرة للاستمتاع بطبق الأردن الوطني بدون قلق.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>Mansaf gatherings are a staple in Amman life, but missing teeth can dampen the experience. Our titanium implants provide lifelong stability, allowing you to chew tender lamb and yogurt rice with ease. With a 3-month healing period and warranty, patients share stories of reclaiming their culinary joys on IG.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>تجمعات المنسف أساسية في حياة عمان، لكن فقدان الأسنان يمكن أن يخفف المتعة. زراعاتنا التيتانيوم توفر استقرارًا مدى الحياة، مما يسمح لك بمضغ لحم الضأن الناعم والأرز بالزبادي بسهولة. مع فترة شفاء 3 أشهر وضمان، يشارك المرضى قصص استرداد متعهم الطهوية على IG.</p>
+                </div>
+            </li>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Pediatric School Check-Ups</h3>
+                <h3 data-lang="ar">فحوصات مدرسية للأطفال</h3>
+                <p data-lang="en">Fun visits with sealants to protect young smiles.</p>
+                <p data-lang="ar">زيارات ممتعة مع مواد مانعة للحماية ابتسامات الشباب.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>Back-to-school season in Jordan means busy parents and excited kids. Our pediatric dentistry turns routine check-ups into games, applying free sealants under 12 to prevent cavities from sugary treats like knafeh. Parents rave about tear-free experiences in our IG reels.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>موسم العودة إلى المدرسة في الأردن يعني آباء مشغولين وأطفال متحمسين. طب أسنان الأطفال يحول الفحوصات الروتينية إلى ألعاب، يطبق مواد مانعة مجانية تحت 12 لمنع التجاويف من الحلويات السكرية مثل الكنافة. يمدح الآباء التجارب بدون دموع في ريلات IG.</p>
+                </div>
+            </li>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Gums Dry Air Relief</h3>
+                <h3 data-lang="ar">تخفيف لثة الهواء الجاف</h3>
+                <p data-lang="en">Scaling to combat Amman's arid climate effects.</p>
+                <p data-lang="ar">تنظيف عميق لمواجهة تأثيرات مناخ عمان الجاف.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>Amman's dry air can exacerbate gum issues, leading to recession and discomfort. Our therapeutic scaling removes plaque deeply while advising on herbal rinses suited to Jordanian homes. Sessions prevent further issues, with patients noting improved health during summer heatwaves via IG videos.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>هواء عمان الجاف يمكن أن يفاقم مشاكل اللثة، مما يؤدي إلى التراجع والانزعاج. تنظيفنا العلاجي يزيل اللويحة بعمق بينما ينصح بغسولات عشبية مناسبة للمنازل الأردنية. الجلسات تمنع المشاكل الإضافية، مع ملاحظة المرضى تحسن الصحة خلال موجات الحر الصيفية عبر فيديوهات IG.</p>
+                </div>
+            </li>
+            <li class="spotlight" onclick="toggleSpotlight(this)">
+                <h3 data-lang="en">Fillings for Sweet Treat Protection</h3>
+                <h3 data-lang="ar">حشوات لحماية الحلويات</h3>
+                <p data-lang="en">Natural repairs for enjoying maamoul safely.</p>
+                <p data-lang="ar">إصلاحات طبيعية للاستمتاع بالمعمول بأمان.</p>
+                <div class="spotlight-details" data-lang="en">
+                    <p>Jordan's love for sweets like maamoul during holidays often leads to cavities. Our cosmetic fillings use composite materials that blend seamlessly, lasting 5-10 years. Ideal for Amman's sweet tooths, with free disease checks—tips shared on IG for holiday-proof smiles.</p>
+                </div>
+                <div class="spotlight-details" data-lang="ar">
+                    <p>حب الأردن للحلويات مثل المعمول خلال العطلات غالبًا ما يؤدي إلى تجاويف. حشواتنا التجميلية تستخدم مواد مركبة تندمج بسلاسة، تدوم 5-10 سنوات. مثالية لمحبي الحلويات في عمان، مع فحوصات أمراض مجانية—نصائح مشتركة على IG لابتسامات مقاومة للعطلات.</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2 data-lang="en">Testimonials</h2>
+        <h2 data-lang="ar">شهادات</h2>
+        <ol class="carousel">
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Veneers</span>
+                <span class="badge" data-lang="ar">الفينير</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Dr. Abeer transformed my Eid smile with veneers—natural glow for family photos! – Fatima Al-Mansour, Amman."</p>
+                <p data-lang="ar">"حولت د. عبير ابتسامتي في العيد بالفينير—توهج طبيعي لصور العائلة! – فاطمة المنصور، عمان."</p>
+            </li>
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Implants</span>
+                <span class="badge" data-lang="ar">زراعة الأسنان</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Painless implants let me enjoy kunafa again. – Omar Khaled, Jabal Hussein."</p>
+                <p data-lang="ar">"زراعات بدون ألم تسمح لي بالاستمتاع بالكنافة مرة أخرى. – عمر خالد، جبل الحسين."</p>
+            </li>
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Pediatric</span>
+                <span class="badge" data-lang="ar">طب أسنان الأطفال</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Kids' check-ups are a game now—sealants free! – Layla Hassan, local mom."</p>
+                <p data-lang="ar">"فحوصات الأطفال الآن لعبة—مانعات مجانية! – ليلى حسن، أم محلية."</p>
+            </li>
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Whitening</span>
+                <span class="badge" data-lang="ar">تبييض الأسنان</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Whitening from her IG reel: Instant confidence boost. – Nour Radwan, Abdali."</p>
+                <p data-lang="ar">"تبييض من ريل IG: دفعة ثقة فورية. – نور رضوان، عبدعلي."</p>
+            </li>
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Gum</span>
+                <span class="badge" data-lang="ar">علاج اللثة</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Gum scaling fixed my recession—no more bleeding. – Ahmed Nassar, Abdoun."</p>
+                <p data-lang="ar">"تنظيف اللثة أصلح تراجعي—لا نزيف بعد. – أحمد نصار، عبدون."</p>
+            </li>
+            <li class="testimonial-card">
+                <span class="badge" data-lang="en">Root Canal</span>
+                <span class="badge" data-lang="ar">علاج العصب</span>
+                <div class="stars">★★★★★</div>
+                <p data-lang="en">"Root canal without fear—back to work same day. – Sara Khalil, Rainbow Street."</p>
+                <p data-lang="ar">"علاج عصب بدون خوف—عودة للعمل في نفس اليوم. – سارة خليل، شارع الربيع."</p>
+            </li>
+        </ol>
+    </section>
+
+    <section id="faq">
+        <h2 data-lang="en">FAQ</h2>
+        <h2 data-lang="ar">أسئلة شائعة</h2>
+        <dl>
+            <dt onclick="toggleFAQ(this)">What is Hollywood Smile? <span data-lang="ar">ما هي ابتسامة هوليوود؟</span></dt>
+            <dd data-lang="en">Premium veneers for a celebrity-like transformation.</dd>
+            <dd data-lang="ar">فينير متميز لتحول مثل المشاهير.</dd>
+            <dt onclick="toggleFAQ(this)">How long does whitening last? <span data-lang="ar">كم تدوم التبييض؟</span></dt>
+            <dd data-lang="en">6-12 months with maintenance.</dd>
+            <dd data-lang="ar">6-12 شهر مع الصيانة.</dd>
+            <dt onclick="toggleFAQ(this)">Is implant surgery painful? <span data-lang="ar">هل جراحة الزراعة مؤلمة؟</span></dt>
+            <dd data-lang="en">Pain-free with laser tech.</dd>
+            <dd data-lang="ar">بدون ألم بتقنية الليزر.</dd>
+            <dt onclick="toggleFAQ(this)">What materials for crowns? <span data-lang="ar">ما مواد التيجان؟</span></dt>
+            <dd data-lang="en">Durable porcelain.</dd>
+            <dd data-lang="ar">خزف متين.</dd>
+            <dt onclick="toggleFAQ(this)">Are fillings visible? <span data-lang="ar">هل الحشوات مرئية؟</span></dt>
+            <dd data-lang="en">Tooth-colored, seamless.</dd>
+            <dd data-lang="ar">لون السن، سلس.</dd>
+            <dt onclick="toggleFAQ(this)">Root canal recovery time? <span data-lang="ar">وقت تعافي علاج العصب؟</span></dt>
+            <dd data-lang="en">Same day.</dd>
+            <dd data-lang="ar">نفس اليوم.</dd>
+            <dt onclick="toggleFAQ(this)">Gum treatment frequency? <span data-lang="ar">تكرار علاج اللثة؟</span></dt>
+            <dd data-lang="en">Every 6 months.</dd>
+            <dd data-lang="ar">كل 6 أشهر.</dd>
+            <dt onclick="toggleFAQ(this)">Pediatric visits start at? <span data-lang="ar">متى تبدأ زيارات الأطفال؟</span></dt>
+            <dd data-lang="en">Age 1.</dd>
+            <dd data-lang="ar">عمر 1.</dd>
+            <dt onclick="toggleFAQ(this)">Orthodontics options? <span data-lang="ar">خيارات تقويم الأسنان؟</span></dt>
+            <dd data-lang="en">Braces or Invisalign, 300-800 JD; discreet for Amman lifestyle, monthly adjustments included.</dd>
+            <dd data-lang="ar">أجهزة تقويم أو إنفيزالاين، 300-800 دينار؛ سري لنمط حياة عمان، تعديلات شهرية مشمولة.</dd>
+            <dt onclick="toggleFAQ(this)">Post-treatment care? <span data-lang="ar">رعاية ما بعد العلاج؟</span></dt>
+            <dd data-lang="en">Free follow-ups 6 months; avoid nuts/maamoul first week—IG care reel for Jordan diets.</dd>
+            <dd data-lang="ar">متابعات مجانية 6 أشهر؛ تجنب المكسرات/المعمول الأسبوع الأول—ريل رعاية IG لنظام الأردن.</dd>
+        </dl>
+    </section>
+
+    <section id="blog">
+        <h2 data-lang="en">Blog Teaser</h2>
+        <h2 data-lang="ar">مقدمة المدونة</h2>
+        <div class="blog-card">
+            <div class="thumb"></div>
+            <h3 data-lang="en">Eid Prep: Whitening Tips</h3>
+            <h3 data-lang="ar">تحضير العيد: نصائح تبييض</h3>
+            <p data-lang="en">Get ready for family gatherings with a bright smile. Quick session beats stains from festive sweets.</p>
+            <p data-lang="ar">استعد للتجمعات العائلية بابتسامة مشرقة. جلسة سريعة تهزم بقع الحلويات العيدية.</p>
+            <a onclick="openModal('blog1'); event.preventDefault();">Read More</a>
+        </div>
+        <div class="blog-card">
+            <div class="thumb"></div>
+            <h3 data-lang="en">Summer Hydration for Gums</h3>
+            <h3 data-lang="ar">ترطيب الصيف للثة</h3>
+            <p data-lang="en">Beat dry Amman air with these Jordan-friendly rinses.</p>
+            <p data-lang="ar">هزم هواء عمان الجاف بهذه الغسولات الودية للأردن.</p>
+            <a onclick="openModal('blog2'); event.preventDefault();">Read More</a>
+        </div>
+        <div class="blog-card">
+            <div class="thumb"></div>
+            <h3 data-lang="en">Implants: Mansaf Edition</h3>
+            <h3 data-lang="ar">زراعات: إصدار المنسف</h3>
+            <p data-lang="en">Chew your favorite dish post-procedure without worry.</p>
+            <p data-lang="ar">امضغ طبقك المفضل بعد الإجراء بدون قلق.</p>
+            <a onclick="openModal('blog3'); event.preventDefault();">Read More</a>
+        </div>
+        <div class="blog-card">
+            <div class="thumb"></div>
+            <h3 data-lang="en">Kids' Dental Games</h3>
+            <h3 data-lang="ar">ألعاب أسنان الأطفال</h3>
+            <p data-lang="en">Fun ways to make check-ups exciting in Amman.</p>
+            <p data-lang="ar">طرق ممتعة لجعل الفحوصات مثيرة في عمان.</p>
+            <a onclick="openModal('blog4'); event.preventDefault();">Read More</a>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2 data-lang="en">Booking</h2>
+        <h2 data-lang="ar">الحجز</h2>
+        <form onsubmit="bookAppointment(event)">
+            <input type="text" placeholder="Name / الاسم" required>
+            <input type="tel" placeholder="Phone / الهاتف" required>
+            <select required>
+                <option value="">Select Service / اختر الخدمة</option>
+                <option>Hollywood Smile</option>
+                <option>Teeth Whitening</option>
+                <option>Dental Implants</option>
+                <option>Crowns & Bridges</option>
+                <option>Cosmetic Fillings</option>
+                <option>Root Canal</option>
+                <option>Gum Treatment</option>
+                <option>Pediatric Dentistry</option>
+                <option>Surgical Extraction</option>
+                <option>Wisdom Tooth Removal</option>
+                <option>Teeth Cleaning</option>
+                <option>General Dentistry</option>
+                <option>Dental Diseases Consult</option>
+                <option>Botox & Fillers</option>
+                <option>Compositions</option>
+                <option>Nerve Treatment</option>
+            </select>
+            <textarea placeholder="Message / رسالة"></textarea>
+            <button type="submit" data-lang="en">Book Now</button>
+            <button type="submit" data-lang="ar">احجز الآن</button>
+        </form>
+    </section>
+
+    <section id="contact">
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="ar">اتصال</h2>
+        <p data-lang="en">Jabal Al-Hussein, Amman. Using German Dentamax/WP precision tools, laser tech, digital 3D imaging—see IG for demos (@elevate_dental_clinic).</p>
+        <p data-lang="ar">جبل الحسين، عمان. استخدام أدوات الدقة الألمانية Dentamax/WP، تقنية الليزر، التصوير الرقمي ثلاثي الأبعاد—شاهد IG للعروض (@elevate_dental_clinic).</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.9999999999995!2d35.9333!3d31.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDU3JzAwLjAiTiAzNcKwNTYnMDAuMCJF!5e0!3m2!1sen!2sjo!4v1234567890"></iframe>
+    </section>
+
+    <footer>
+        <div class="logo"></div>
+        <p>&copy; 2025 Elevate Dental Clinic</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="https://www.instagram.com/elevate_dental_clinic?igsh=MmI4cHBmcTE5dW90" target="_blank">Follow on IG</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth Scroll
+            window.smoothScroll = function(e) {
+                e.preventDefault();
+                const href = e.target.getAttribute('href') || e.target.dataset.href;
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Hamburger
+            document.querySelector('.hamburger').addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.toggle('active');
+            });
+
+            // Lang Toggle
+            window.toggleLang = function() {
+                document.body.classList.toggle('lang-ar');
+                const btn = document.querySelector('.lang-toggle');
+                btn.textContent = document.body.classList.contains('lang-ar') ? 'English' : 'عربي';
+            };
+
+            // Modals
+            window.openModal = function(id) {
+                const modal = document.getElementById('modal');
+                const body = document.getElementById('modal-body');
+                let content = '';
+                switch(id) {
+                    case 'hollywood':
+                        content = '<h3 data-lang="en">Hollywood Smile & Veneers</h3><h3 data-lang="ar">ابتسامة هوليوود والفينير وقشور الخزف</h3><p data-lang="en">Custom veneers designed via digital scan for natural results. 2-week process with temporary fittings, 300-600 JD full set (includes consult). Subs: Surgical Extraction (100 JD), Wisdom Tooth Removal (120 JD). IG video shows Amman patient\'s Eid transformation.</p><p data-lang="ar">فينير مخصص مصمم عبر مسح رقمي لنتائج طبيعية. عملية أسبوعين مع تركيبات مؤقتة، 300-600 دينار مجموعة كاملة (تشمل استشارة). الفرعيات: استخراج جراحي (100 دينار)، إزالة ضرس العقل (120 دينار). فيديو IG يظهر تحول مريض عماني في العيد.</p>';
+                        break;
+                    case 'whitening':
+                        content = '<h3 data-lang="en">Teeth Whitening</h3><h3 data-lang="ar">تبييض الأسنان</h3><p data-lang="en">Safe 1-hour session with take-home gel kit. Ideal for Jordan tea stains, starts 25 JD (lasts 6-12 months). Subs: Teeth Cleaning (30 JD). Watch IG reel for before/after.</p><p data-lang="ar">جلسة آمنة ساعة واحدة مع مجموعة جل منزلية. مثالية لبقع شاي الأردن، تبدأ 25 دينار (تدوم 6-12 شهر). الفرعيات: تنظيف الأسنان (30 دينار). شاهد ريل IG لقبل/بعد.</p>';
+                        break;
+                    case 'implants':
+                        content = '<h3 data-lang="en">Dental Implants</h3><h3 data-lang="ar">زراعة الأسنان</h3><p data-lang="en">Minimally invasive placement with 3-month healing. Single 400 JD (warranty included). Subs: General Dentistry Consult (free). Patient story from IG: \'Back to mansaf without worry!\'</p><p data-lang="ar">وضع غير جراحي مع شفاء 3 أشهر. واحد 400 دينار (ضمان مشمول). الفرعيات: استشارة طب أسنان عام (مجاني). قصة مريض من IG: \'عودة للمنسف بدون قلق!\'</p>';
+                        break;
+                    case 'crowns':
+                        content = '<h3 data-lang="en">Crowns & Bridges</h3><h3 data-lang="ar">تيجان وجسور الأسنان</h3><p data-lang="en">Custom-fit for function and aesthetics. Crown 150 JD, bridge 500 JD (same-day temps). Subs: Compositions (100 JD). See IG bridge demo for quick recovery.</p><p data-lang="ar">مخصص للوظيفة والجماليات. تاج 150 دينار، جسر 500 دينار (مؤقتات نفس اليوم). الفرعيات: تركيبات (100 دينار). شاهد عرض IG للجسر لتعافي سريع.</p>';
+                        break;
+                    case 'fillings':
+                        content = '<h3 data-lang="en">Cosmetic Fillings</h3><h3 data-lang="ar">حشوات الأسنان التجميلية</h3><p data-lang="en">Composite materials blending naturally. Per tooth 50 JD (5-10 year durability). Subs: Dental Diseases Check (free). IG tip: Perfect for Amman sweet tooths.</p><p data-lang="ar">مواد مركبة تندمج طبيعيًا. لكل سن 50 دينار (متانة 5-10 سنوات). الفرعيات: فحص أمراض الأسنان (مجاني). نصيحة IG: مثالية لمحبي الحلويات في عمان.</p>';
+                        break;
+                    case 'root':
+                        content = '<h3 data-lang="en">Root Canal Treatment</h3><h3 data-lang="ar">علاج العصب</h3><p data-lang="en">Pain-free removal + filling with X-ray. 150 JD (includes follow-up). Subs: Nerve Treatment (included). From IG: \'No discomfort—back to work same day!\'</p><p data-lang="ar">إزالة بدون ألم + حشو مع أشعة سينية. 150 دينار (تشمل متابعة). الفرعيات: علاج العصب (مشمول). من IG: \'لا إزعاج—عودة للعمل نفس اليوم!\'</p>';
+                        break;
+                    case 'gum':
+                        content = '<h3 data-lang="en">Gum Treatment</h3><h3 data-lang="ar">علاج اللثة وظيفيًا وجماليًا</h3><p data-lang="en">Deep clean for health and aesthetics. 80 JD session (prevents recession in dry Amman air). Subs: Botox & Fillers (200 JD for grinding). IG video on herbal rinses.</p><p data-lang="ar">تنظيف عميق للصحة والجماليات. جلسة 80 دينار (يمنع التراجع في هواء عمان الجاف). الفرعيات: بوتوكس وفيلرز (200 دينار للطحن). فيديو IG عن غسولات عشبية.</p>';
+                        break;
+                    case 'pediatric':
+                        content = '<h3 data-lang="en">Pediatric Dentistry</h3><h3 data-lang="ar">طب أسنان الأطفال</h3><p data-lang="en">Exams with games/sealants. Visit 40 JD (free sealants under 12). Subs: Kids Orthodontics (300 JD). IG reel: \'Smiles without tears!\'</p><p data-lang="ar">فحوصات مع ألعاب/مانعات. زيارة 40 دينار (مانعات مجانية تحت 12). الفرعيات: تقويم أطفال (300 دينار). ريل IG: \'ابتسامات بدون دموع!\'</p>';
+                        break;
+                    case 'blog1':
+                        content = '<h3 data-lang="en">Eid Prep: Whitening Tips</h3><h3 data-lang="ar">تحضير العيد: نصائح تبييض</h3><p data-lang="en">As Eid approaches, your smile is the star of family photos. Our laser whitening removes stubborn stains from iftar feasts and sweet treats, delivering instant brightness in just one hour. Tailored for Amman\'s tea-loving locals, this treatment includes a take-home kit to maintain that glow through the celebrations. Dr. Abeer shares pro tips on IG, like pairing with hydration for dry climates. Book now for a confident holiday—starts at 25 JD, lasting up to a year. Transform your tradition with a radiant grin!</p><p data-lang="ar">مع اقتراب العيد، ابتسامتك نجم صور العائلة. تبييض الليزر يزيل البقع العنيدة من ولائم الإفطار والحلويات، يوفر إشراقًا فوريًا في ساعة واحدة. مصمم لمحبي الشاي في عمان، يشمل مجموعة منزلية للحفاظ على التوهج خلال الاحتفالات. تشارك د. عبير نصائح محترفة على IG، مثل الاقتران بالترطيب للمناخ الجاف. احجز الآن لعطلة واثقة—يبدأ 25 دينار، يدوم حتى سنة. حول تقاليدك بابتسامة مشرقة!</p>';
+                        break;
+                    case 'blog2':
+                        content = '<h3 data-lang="en">Summer Hydration for Gums</h3><h3 data-lang="ar">ترطيب الصيف للثة</h3><p data-lang="en">Amman\'s scorching summers can wreak havoc on gums, causing dryness and recession. Discover Dr. Abeer\'s guide to hydration: from saline rinses infused with local herbs like za\'atar to laser-assisted scaling that deep-cleans without discomfort. Prevent issues before they start—our 80 JD sessions promote healthy pink gums suited to Jordan\'s arid air. Integrated with lifestyle advice for Ramadan fasting, this approach empowers patients with simple home remedies. Follow our IG for demo videos and seasonal tips to keep your smile resilient all year.</p><p data-lang="ar">صيف عمان الحارق يمكن أن يدمر اللثة، مسببًا جفافًا وتراجعًا. اكتشف دليل د. عبير للترطيب: من غسولات ملحية مع أعشاب محلية مثل الزعتر إلى تنظيف ليزري ينظف بعمق بدون إزعاج. منع المشاكل قبل بدايتها—جلساتنا 80 دينار تعزز لثة وردية صحية مناسبة لهواء الأردن الجاف. مدمجة بنصائح نمط الحياة لصيام رمضان، هذا النهج يمكن المرضى بعلاجات منزلية بسيطة. تابع IG لفيديوهات عرض ونصائح موسمية للحفاظ على ابتسامتك مرنة طوال العام.</p>';
+                        break;
+                    case 'blog3':
+                        content = '<h3 data-lang="en">Implants: Mansaf Edition</h3><h3 data-lang="ar">زراعات: إصدار المنسف</h3><p data-lang="en">Nothing beats the joy of mansaf at a Jordanian gathering, but loose teeth can spoil the feast. Enter titanium implants: minimally invasive, with a quick 3-month integration for lifelong stability. At 400 JD per single tooth (warranty included), they let you savor yogurt-soaked rice and lamb without a second thought. Dr. Abeer uses 3D imaging for precise placement, minimizing pain via laser tech. Hear from Amman patients on IG who reclaimed their cultural dishes post-procedure—back to family dinners with full confidence. Free consult to see if it\'s right for you.</p><p data-lang="ar">لا شيء يفوق فرح المنسف في تجمع أردني، لكن الأسنان المتحركة تفسد الوليمة. ادخل زراعات التيتانيوم: غير جراحية، مع اندماج سريع 3 أشهر لاستقرار مدى الحياة. بـ400 دينار لكل سن واحد (ضمان مشمول)، تسمح لك بالاستمتاع بالأرز المبلل بالزبادي واللحم بدون تفكير ثان. تستخدم د. عبير تصوير 3D للوضع الدقيق، تقلل الألم عبر تقنية الليزر. استمع لمرضى عمان على IG الذين استردوا أطباقهم الثقافية بعد الإجراء—عودة لعشاء العائلة بثقة كاملة. استشارة مجانية لمعرفة إذا كان مناسبًا لك.</p>';
+                        break;
+                    case 'blog4':
+                        content = '<h3 data-lang="en">Kids\' Dental Games</h3><h3 data-lang="ar">ألعاب أسنان الأطفال</h3><p data-lang="en">Dentist visits don\'t have to be scary—turn them into adventures! At Elevate, we use games and stories to ease anxiety, applying sealants during fun challenges that protect against cavities from Amman\'s beloved sweets. Starting at 40 JD, visits include exams and free sealants for under-12s, with subs like kids\' orthodontics at 300 JD. Dr. Abeer\'s gentle approach, inspired by Jordanian family values, ensures smiles without tears. Check our IG reels for parent-approved tips and before-after stories that make oral health exciting for the whole family.</p><p data-lang="ar">زيارات طبيب الأسنان لا يجب أن تكون مخيفة—حولها إلى مغامرات! في إليفيت، نستخدم الألعاب والقصص لتخفيف القلق، نطبق المانعات خلال تحديات ممتعة تحمي من التجاويف من حلويات عمان المحبوبة. تبدأ 40 دينار، تشمل الفحوصات ومانعات مجانية لتحت 12، مع فرعيات مثل تقويم الأطفال بـ300 دينار. نهج د. عبير اللطيف، مستوحى من قيم العائلة الأردنية، يضمن ابتسامات بدون دموع. تحقق ريلات IG لنصائح معتمدة من الآباء وقصص قبل-بعد تجعل صحة الفم مثيرة للعائلة بأكملها.</p>';
+                        break;
+                }
+                body.innerHTML = content;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+            window.closeModal = function() {
+                document.getElementById('modal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            };
+            document.getElementById('modal').addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            // Spotlights Toggle
+            window.toggleSpotlight = function(el) {
+                el.classList.toggle('open');
+            };
+
+            // FAQ Toggle
+            window.toggleFAQ = function(el) {
+                const dd = el.nextElementSibling;
+                dd.classList.toggle('open');
+            };
+
+            // Testimonials Carousel
+            let currentTest = 0;
+            const tests = document.querySelectorAll('.testimonial-card');
+            setInterval(() => {
+                tests[currentTest].style.opacity = '0';
+                tests[currentTest].style.transform = 'translateX(-100%)';
+                currentTest = (currentTest + 1) % tests.length;
+                tests[currentTest].style.opacity = '1';
+                tests[currentTest].style.transform = 'translateX(0)';
+                tests[currentTest].style.animation = 'slideIn 0.5s';
+            }, 5000);
+
+            // Booking
+            window.bookAppointment = function(e) {
+                e.preventDefault();
+                const service = e.target.querySelector('select').value;
+                alert(document.body.classList.contains('lang-ar') ? 'شكرًا! 1hr call' : 'Thanks! 1hr call');
+                window.open(`https://wa.me/962796982720?text=Book ${service} appt`);
+            };
+        });
+    </script>
+</body>
+</html>
